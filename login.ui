@@ -1,0 +1,1175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1785</width>
+    <height>1304</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>400</y>
+      <width>370</width>
+      <height>511</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/images/images/astronaut.jpg);
+border-top-left-radius:30px;
+border-bottom-left-radius:30px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>1110</x>
+      <y>400</y>
+      <width>501</width>
+      <height>511</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+border-top-right-radius:30px;
+border-bottom-right-radius:30px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>1150</x>
+      <y>470</y>
+      <width>431</width>
+      <height>44</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="styleSheet">
+        <string notr="true">#pushButton_5{
+	border:none;
+}
+#pushButton_5{
+	font: 13pt &quot;微软雅黑&quot;;
+	background-color:rgb(255,255,255);
+	color:rgb(0,0,0);
+
+	border-radius:8px
+}
+#pushButton_5:hover{
+	background-color:rgb(0,0,0);
+	color: rgb(255, 255, 255);
+}
+#pushButton_5:press{
+	padding-top:5px;
+	padding-left:5px;
+}
+#pushButton_5:focus{
+	background-color:rgb(0,0,0);
+	color: rgb(255, 255, 255);
+}</string>
+       </property>
+       <property name="text">
+        <string>直接登录</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="Line" name="line_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>13</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#pushButton{
+	border:none;
+}
+#pushButton{
+	font: 13pt &quot;微软雅黑&quot;;
+	background-color:rgb(255,255,255);
+	color:rgb(0,0,0);
+
+	border-radius:8px
+}
+#pushButton:hover{
+	background-color:rgb(0,0,0);
+	color: rgb(255, 255, 255);
+}
+#pushButton:press{
+	padding-top:5px;
+	padding-left:5px;
+}
+#pushButton:focus{
+	background-color:rgb(0,0,0);
+	color: rgb(255, 255, 255);
+}</string>
+       </property>
+       <property name="text">
+        <string>账号登录</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>13</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#pushButton_2{
+	border:none;
+}
+#pushButton_2{
+	font: 13pt &quot;微软雅黑&quot;;
+	background-color:rgb(255,255,255);
+	color:rgb(0,0,0);
+
+	border-radius:8px
+}
+#pushButton_2:hover{
+	background-color:rgb(0,0,0);
+	color: rgb(255, 255, 255);
+}
+#pushButton_2:press{
+	padding-top:5px;
+	padding-left:5px;
+}
+#pushButton_2:focus{
+	background-color:rgb(0,0,0);
+	color: rgb(255, 255, 255);
+}</string>
+       </property>
+       <property name="text">
+        <string>注册</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>1550</x>
+      <y>410</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#pushButton_4:hover{
+	padding-bottom:10px
+
+}
+
+#pushButton_4{
+	border:none;
+
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="resouce.qrc">
+      <normaloff>:/icons/icons/close.png</normaloff>:/icons/icons/close.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_7">
+    <property name="geometry">
+     <rect>
+      <x>1500</x>
+      <y>410</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#pushButton_7:hover{
+	padding-bottom:10px
+
+}
+
+#pushButton_7{
+	border:none;
+
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="resouce.qrc">
+      <normaloff>:/icons/icons/minimize (1).png</normaloff>:/icons/icons/minimize (1).png</iconset>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widget_3" native="true">
+    <property name="geometry">
+     <rect>
+      <x>1150</x>
+      <y>530</y>
+      <width>430</width>
+      <height>360</height>
+     </rect>
+    </property>
+    <widget class="QLineEdit" name="lineEdit_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>411</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:1px solid rgb(0,0,0);
+border-radius:8px;</string>
+     </property>
+     <property name="placeholderText">
+      <string>账号格式：任务编号(14)+自身代号(02)</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_22">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>270</y>
+       <width>411</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#pushButton_22{
+	background-color:rgb(0,0,0);
+	color:rgb(255,255,255);
+	border:3px solid rgb(0,0,0);
+	border-radius:8px
+}
+#pushButton_22:hover{
+	background-color:rgb(255,255,255);
+	color: rgb(0, 0, 0);
+}
+#pushButton_22:press{
+	padding-top:5px;
+	padding-left:5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>注册</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_5">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>170</y>
+       <width>361</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <widget class="QPushButton" name="pushButton_23">
+        <property name="styleSheet">
+         <string notr="true">#pushButton_23{
+	border:none;
+}
+#pushButton_23{
+	font: 13pt &quot;微软雅黑&quot;;
+	background-color:rgb(255,255,255);
+	color:rgb(0,0,0);
+
+	border-radius:8px
+}</string>
+        </property>
+        <property name="text">
+         <string>性别：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_13">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pB_w3_1">
+        <property name="styleSheet">
+         <string notr="true">#pB_w3_1{
+	font: 13pt &quot;微软雅黑&quot;;
+
+}
+#pB_w3_1:hover{
+	background-color:rgb(0,0,0);
+	color: rgb(255, 255, 255);
+}</string>
+        </property>
+        <property name="text">
+         <string>男</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_14">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pB_w3_2">
+        <property name="styleSheet">
+         <string notr="true">#pB_w3_2:hover{
+	background-color:rgb(0,0,0);
+	color: rgb(255, 255, 255);
+}
+#pB_w3_2{
+	font: 13pt &quot;微软雅黑&quot;;
+}</string>
+        </property>
+        <property name="text">
+         <string>女</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_15">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_6">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>220</y>
+       <width>361</width>
+       <height>42</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_7">
+      <item>
+       <widget class="QPushButton" name="pushButton_26">
+        <property name="styleSheet">
+         <string notr="true">#pushButton_26{
+	border:none;
+}
+#pushButton_26{
+	font: 13pt &quot;微软雅黑&quot;;
+	background-color:rgb(255,255,255);
+	color:rgb(0,0,0);
+
+	border-radius:8px
+}</string>
+        </property>
+        <property name="text">
+         <string>惯用手</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_16">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pB_w3_3">
+        <property name="styleSheet">
+         <string notr="true">#pB_w3_3{
+	font: 13pt &quot;微软雅黑&quot;;
+
+}
+#pB_w3_3:hover{
+	background-color:rgb(0,0,0);
+	color: rgb(255, 255, 255);
+}</string>
+        </property>
+        <property name="text">
+         <string>左手</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_17">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pB_w3_4">
+        <property name="styleSheet">
+         <string notr="true">#pB_w3_4{
+	font: 13pt &quot;微软雅黑&quot;;
+
+}
+#pB_w3_4:hover{
+	background-color:rgb(0,0,0);
+	color: rgb(255, 255, 255);
+}</string>
+        </property>
+        <property name="text">
+         <string>右手</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_18">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>411</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:1px solid rgb(0,0,0);
+border-radius:8px;</string>
+     </property>
+     <property name="placeholderText">
+      <string>确认账号</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>1150</x>
+      <y>530</y>
+      <width>430</width>
+      <height>360</height>
+     </rect>
+    </property>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>411</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:1px solid rgb(0,0,0);
+border-radius:8px;</string>
+     </property>
+     <property name="placeholderText">
+      <string>人员二：任务编号(14)+自身代号(02)</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>270</y>
+       <width>411</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#pushButton_3{
+	background-color:rgb(0,0,0);
+	color:rgb(255,255,255);
+	border:3px solid rgb(0,0,0);
+	border-radius:8px
+}
+#pushButton_3:hover{
+	background-color:rgb(255,255,255);
+	color: rgb(0, 0, 0);
+}
+#pushButton_3:press{
+	padding-top:5px;
+	padding-left:5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>登录</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>170</y>
+       <width>361</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QPushButton" name="pushButton_12">
+        <property name="styleSheet">
+         <string notr="true">#pushButton_12{
+	border:none;
+}
+#pushButton_12{
+	font: 13pt &quot;微软雅黑&quot;;
+	background-color:rgb(255,255,255);
+	color:rgb(0,0,0);
+
+	border-radius:8px
+}</string>
+        </property>
+        <property name="text">
+         <string>性别：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pB_w2_1">
+        <property name="styleSheet">
+         <string notr="true">#pB_w2_1{
+	font: 13pt &quot;微软雅黑&quot;;
+
+}
+#pB_w2_1:hover{
+	background-color:rgb(0,0,0);
+	color: rgb(255, 255, 255);
+}</string>
+        </property>
+        <property name="text">
+         <string>男</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pB_w2_2">
+        <property name="styleSheet">
+         <string notr="true">#pB_w2_2{
+	font: 13pt &quot;微软雅黑&quot;;
+
+}
+#pB_w2_2:hover{
+	background-color:rgb(0,0,0);
+	color: rgb(255, 255, 255);
+}</string>
+        </property>
+        <property name="text">
+         <string>女</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_5">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>220</y>
+       <width>361</width>
+       <height>42</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QPushButton" name="pushButton_13">
+        <property name="styleSheet">
+         <string notr="true">#pushButton_13{
+	border:none;
+}
+#pushButton_13{
+	font: 13pt &quot;微软雅黑&quot;;
+	background-color:rgb(255,255,255);
+	color:rgb(0,0,0);
+
+	border-radius:8px
+}</string>
+        </property>
+        <property name="text">
+         <string>惯用手</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pB_w2_3">
+        <property name="styleSheet">
+         <string notr="true">#pB_w2_3{
+	font: 13pt &quot;微软雅黑&quot;;
+
+}
+#pB_w2_3:hover{
+	background-color:rgb(0,0,0);
+	color: rgb(255, 255, 255);
+}</string>
+        </property>
+        <property name="text">
+         <string>左手</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pB_w2_4">
+        <property name="styleSheet">
+         <string notr="true">#pB_w2_4{
+	font: 13pt &quot;微软雅黑&quot;;
+
+}
+#pB_w2_4:hover{
+	background-color:rgb(0,0,0);
+	color: rgb(255, 255, 255);
+}</string>
+        </property>
+        <property name="text">
+         <string>右手</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_6">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QPushButton" name="pB_w2_s">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>70</y>
+       <width>75</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="resouce.qrc">
+       <normaloff>:/icons/icons/放大镜.png</normaloff>:/icons/icons/放大镜.png</iconset>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="widget_1" native="true">
+    <property name="geometry">
+     <rect>
+      <x>1150</x>
+      <y>530</y>
+      <width>430</width>
+      <height>360</height>
+     </rect>
+    </property>
+    <widget class="QLineEdit" name="lineEdit_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>411</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:1px solid rgb(0,0,0);
+border-radius:8px;</string>
+     </property>
+     <property name="placeholderText">
+      <string>人员一：任务编号(14)+自身代号(01)</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_14">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>270</y>
+       <width>411</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#pushButton_14{
+	background-color:rgb(0,0,0);
+	color:rgb(255,255,255);
+	border:3px solid rgb(0,0,0);
+	border-radius:8px
+}
+#pushButton_14:hover{
+	background-color:rgb(255,255,255);
+	color: rgb(0, 0, 0);
+}
+#pushButton_14:press{
+	padding-top:5px;
+	padding-left:5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>下一步</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>170</y>
+       <width>361</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QPushButton" name="pushButton_15">
+        <property name="styleSheet">
+         <string notr="true">#pushButton_15{
+	border:none;
+}
+#pushButton_15{
+	font: 13pt &quot;微软雅黑&quot;;
+	background-color:rgb(255,255,255);
+	color:rgb(0,0,0);
+
+	border-radius:8px
+}</string>
+        </property>
+        <property name="text">
+         <string>性别：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_7">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pB_w1_1">
+        <property name="styleSheet">
+         <string notr="true">#pB_w1_1{
+	font: 13pt &quot;微软雅黑&quot;;
+
+}
+#pB_w1_1:hover{
+	background-color:rgb(0,0,0);
+	color: rgb(255, 255, 255);
+}</string>
+        </property>
+        <property name="text">
+         <string>男</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_8">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pB_w1_2">
+        <property name="styleSheet">
+         <string notr="true">#pB_w1_2{
+	font: 13pt &quot;微软雅黑&quot;;
+
+}
+#pB_w1_2:hover{
+	background-color:rgb(0,0,0);
+	color: rgb(255, 255, 255);
+}</string>
+        </property>
+        <property name="text">
+         <string>女</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_9">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_4">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>220</y>
+       <width>361</width>
+       <height>42</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QPushButton" name="pushButton_18">
+        <property name="styleSheet">
+         <string notr="true">#pushButton_18{
+	border:none;
+}
+#pushButton_18{
+	font: 13pt &quot;微软雅黑&quot;;
+	background-color:rgb(255,255,255);
+	color:rgb(0,0,0);
+
+	border-radius:8px
+}</string>
+        </property>
+        <property name="text">
+         <string>惯用手</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_10">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pB_w1_3">
+        <property name="styleSheet">
+         <string notr="true">#pB_w1_3{
+	font: 13pt &quot;微软雅黑&quot;;
+
+}
+#pB_w1_3:hover{
+	background-color:rgb(0,0,0);
+	color: rgb(255, 255, 255);
+}</string>
+        </property>
+        <property name="text">
+         <string>左手</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_11">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pB_w1_4">
+        <property name="styleSheet">
+         <string notr="true">#pB_w1_4{
+	font: 13pt &quot;微软雅黑&quot;;
+
+}
+#pB_w1_4:hover{
+	background-color:rgb(0,0,0);
+	color: rgb(255, 255, 255);
+}</string>
+        </property>
+        <property name="text">
+         <string>右手</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_12">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QPushButton" name="pB_w1_s">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>70</y>
+       <width>75</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="resouce.qrc">
+       <normaloff>:/icons/icons/放大镜.png</normaloff>:/icons/icons/放大镜.png</iconset>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resouce.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>916</x>
+     <y>148</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1048</x>
+     <y>86</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_7</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>showMinimized()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1531</x>
+     <y>438</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1361</x>
+     <y>242</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

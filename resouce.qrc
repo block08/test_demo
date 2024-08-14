@@ -1,0 +1,15 @@
+<RCC>
+  <qresource prefix="images">
+    <file>images/astronaut.jpg</file>
+  </qresource>
+  <qresource prefix="icons">
+    <file>icons/close.png</file>
+    <file>icons/play.png</file>
+    <file>icons/database.png</file>
+    <file>icons/exit.png</file>
+    <file>icons/minimize (1).png</file>
+    <file>icons/地球.png</file>
+    <file>icons/卫星.png</file>
+    <file>icons/放大镜.png</file>
+  </qresource>
+</RCC>
