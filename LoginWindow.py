@@ -337,7 +337,6 @@ if __name__ == '__main__':
         if flag2 not in [1, 2]:
             QMessageBox.warning(None, "警告", "惯用手不能为空！", QMessageBox.Ok)
             return
-
         # 连接数据库并查询用户信息
         try:
             conn = sqlite3.connect("./user_account/Experimenter.db")
