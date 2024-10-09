@@ -335,7 +335,7 @@ class Game:
                 gf.update_screen(exit_button2)
                 gf.update_screen(step_button2)
                 # 更新画面，一定要写在while循环的最后
-                self.level.run2(dt, stats, numbers2)
+                self.level.run2(dt, stats, numbers2, self.screen)
 
                 pygame.display.update()
                 if stats.game_score == 20:
@@ -382,7 +382,6 @@ class Game:
                 if stats.game_score == 22:
                     self.screen.fill('white')
                     break
-
 
 
 
@@ -466,7 +465,6 @@ class Game:
                                 timestamp3, timestamp4, timestamp5, timestamp6, timestamp7, timestamp8))
 
             if paused:
-                print(paused)
                 paint_button3.text = "继续"
                 step_button3.text = "已暂停"
                 gf.update_screen(user_button3)
@@ -491,9 +489,9 @@ class Game:
                 gf.update_screen(exit_button3)
                 gf.update_screen(step_button3)
                 # 更新画面，一定要写在while循环的最后
-                self.level.run3(dt, stats, numbers3)
-
+                self.level.run3(dt, stats, numbers3, self.screen)
                 pygame.display.update()
+
                 if stats.game_score == 31:
                     font = pygame.font.Font('./font/STXINGKA.TTF', 100)  # 设置字体大小为100
 
@@ -533,6 +531,7 @@ class Game:
                     stats.game_score += 1
                 if stats.game_score == 32:
                     next_button3.text = "结束"
+                    
 
                 gf.update_screen(next_button3)
                 if stats.game_score == 33:
@@ -558,8 +557,6 @@ class Game:
 
                     # 退出python程序，不捕获异常,不加上这一句也能退出，但是会在中断报错
                     sys.exit()
-
-
 def draw_data(self, screen, data):
     # 逐行绘制数据
     for i, text in enumerate(data):
@@ -643,14 +640,14 @@ def dataloading2(t1, t2, t3, t4, t5, t6, t7, t8, t9, timestamp1, timestamp2, tim
     calculate_pixel_difference2(image, image6, image6_1, t6, t7, timestamp6)
     calculate_pixel_difference2(image, image7, image7_1, t7, t8, timestamp7)
     calculate_pixel_difference2(image, image8, image8_1, t8, t9, timestamp8)
-    pygameimage1 = cv2.imread('./output_image/post_screenshot0.png')
-    pygameimage2 = cv2.imread('./output_image/post_screenshot1.png')
-    pygameimage3 = cv2.imread('./output_image/post_screenshot2.png')
-    pygameimage4 = cv2.imread('./output_image/post_screenshot3.png')
-    pygameimage5 = cv2.imread('./output_image/post_screenshot4.png')
-    pygameimage6 = cv2.imread('./output_image/post_screenshot5.png')
-    pygameimage7 = cv2.imread('./output_image/post_screenshot6.png')
-    pygameimage8 = cv2.imread('./output_image/post_screenshot7.png')
+    pygameimage1 = cv2.imread('./output2_image/post_screenshot0.png')
+    pygameimage2 = cv2.imread('./output2_image/post_screenshot1.png')
+    pygameimage3 = cv2.imread('./output2_image/post_screenshot2.png')
+    pygameimage4 = cv2.imread('./output2_image/post_screenshot3.png')
+    pygameimage5 = cv2.imread('./output2_image/post_screenshot4.png')
+    pygameimage6 = cv2.imread('./output2_image/post_screenshot5.png')
+    pygameimage7 = cv2.imread('./output2_image/post_screenshot6.png')
+    pygameimage8 = cv2.imread('./output2_image/post_screenshot7.png')
     deviation_area2(pygameimage1)
     deviation_area2(pygameimage2)
     deviation_area2(pygameimage3)
@@ -688,14 +685,14 @@ def dataloading3(t1, t2, t3, t4, t5, t6, t7, t8, t9, timestamp1, timestamp2, tim
     calculate_pixel_difference3(image, image6, image6_1, t6, t7, timestamp6)
     calculate_pixel_difference3(image, image7, image7_1, t7, t8, timestamp7)
     calculate_pixel_difference3(image, image8, image8_1, t8, t9, timestamp8)
-    pygameimage1 = cv2.imread('./output_image/post_screenshot0.png')
-    pygameimage2 = cv2.imread('./output_image/post_screenshot1.png')
-    pygameimage3 = cv2.imread('./output_image/post_screenshot2.png')
-    pygameimage4 = cv2.imread('./output_image/post_screenshot3.png')
-    pygameimage5 = cv2.imread('./output_image/post_screenshot4.png')
-    pygameimage6 = cv2.imread('./output_image/post_screenshot5.png')
-    pygameimage7 = cv2.imread('./output_image/post_screenshot6.png')
-    pygameimage8 = cv2.imread('./output_image/post_screenshot7.png')
+    pygameimage1 = cv2.imread('./output3_image/post_screenshot0.png')
+    pygameimage2 = cv2.imread('./output3_image/post_screenshot1.png')
+    pygameimage3 = cv2.imread('./output3_image/post_screenshot2.png')
+    pygameimage4 = cv2.imread('./output3_image/post_screenshot3.png')
+    pygameimage5 = cv2.imread('./output3_image/post_screenshot4.png')
+    pygameimage6 = cv2.imread('./output3_image/post_screenshot5.png')
+    pygameimage7 = cv2.imread('./output3_image/post_screenshot6.png')
+    pygameimage8 = cv2.imread('./output3_image/post_screenshot7.png')
     deviation_area3(pygameimage1)
     deviation_area3(pygameimage2)
     deviation_area3(pygameimage3)

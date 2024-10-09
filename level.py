@@ -92,7 +92,6 @@ class Level:
             sprite_group.update(dt)
 
             if pygame.sprite.groupcollide(self.all_sprites0, self.end_sprites0, False, False):
-                print('?')
                 for sprite_end in self.end_sprites0:
                     for sprite_in in self.all_sprites0:
                         pygame.draw.line(screen, black, sprite_in.rect.center, sprite_end.rect.center, 5)
@@ -143,7 +142,6 @@ class Level:
             sprite_end_group.draw(self.display_surface)
             sprite_group.update(dt)
             if pygame.sprite.groupcollide(self.all_sprites0, self.end_sprites0, False, False):
-                print('?')
                 for sprite_end in self.end_sprites0:
                     for sprite_in in self.all_sprites0:
                         pygame.draw.line(screen, black, sprite_in.rect.center, sprite_end.rect.center, 5)
@@ -194,7 +192,6 @@ class Level:
             sprite_end_group.draw(self.display_surface)
             sprite_group.update(dt)
             if pygame.sprite.groupcollide(self.all_sprites0, self.end_sprites0, False, False):
-                print('?')
                 for sprite_end in self.end_sprites0:
                     for sprite_in in self.all_sprites0:
                         pygame.draw.line(screen, black, sprite_in.rect.center, sprite_end.rect.center, 5)

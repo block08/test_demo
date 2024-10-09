@@ -9,11 +9,9 @@ from PyQt5.QtWidgets import QMessageBox, QApplication, QMainWindow, QTableView, 
 import login
 import sqlite3
 import time
-
-import main
-import main_simulation
 from check_serial_connection import check_serial_connection
-from export_csv import export_to_csv
+from export_txt import export_to_txt
+from InterfaceWindow import Interfacewindow
 
 
 class TableWidget1(QWidget):
@@ -252,6 +250,8 @@ class LoginWindow(QMainWindow):
         self.ui = login.Ui_MainWindow()
         self.ui.setupUi(self)
         self.counter = 0  # 计数器初始化
+        # 创建主菜单窗口
+        self.interface_win = Interfacewindow()
 
     def mousePressEvent(self, event):
         if event.button() == QtCore.Qt.LeftButton and self.isMaximized() == False:
@@ -275,6 +275,11 @@ class LoginWindow(QMainWindow):
         self.widget = TableWidget2()
         self.widget.show()
 
+    def to_interfaceWindow(w):
+        w.hide()
+        w.interface_win.show()
+
+
 
 
 
@@ -285,8 +290,9 @@ if __name__ == '__main__':
     pB2_2 = False
     pB3_1 = False
     pB3_2 = False
-
-
+    def to_interfaceWindow(w):
+        w.hide()
+        w.interface_win.show()
 
     def change_widget2():
         loginUi.widget_2.show()
@@ -304,6 +310,7 @@ if __name__ == '__main__':
         loginUi.widget_2.hide()
         loginUi.widget_3.hide()
         loginUi.widget_1.show()
+
 
 
     def btn_clicked():
@@ -446,7 +453,7 @@ if __name__ == '__main__':
 
                         sql_insert = 'INSERT INTO data(登录时间, 被试编号, 性别, 惯用手) VALUES(?,?,?,?)'
                         cursor_output.execute(sql_insert, (timestamp, user_id, gender, hand_preference))
-                        export_to_csv("./output_data/output_subInfo.db", "data", "./output_data/output_subInfo.csv")
+                        export_to_txt("./output_data/output_subInfo.db", "data", "./output_data/output_subInfo.txt")
                         conn_output.commit()
                         cursor.close()
                         conn.close()
@@ -454,8 +461,7 @@ if __name__ == '__main__':
                                              QMessageBox.Yes | QMessageBox.No)
                         if choice == QMessageBox.Yes:
                             win.close()
-                            game = main_simulation.Game()
-                            game.run()
+                            to_interfaceWindow(win)
                         else:
                             win.close()
                             sys.exit()
@@ -478,15 +484,14 @@ if __name__ == '__main__':
 
                         sql_insert = 'INSERT INTO data(登录时间, 被试编号, 性别, 惯用手) VALUES(?,?,?,?)'
                         cursor_output.execute(sql_insert, (timestamp, user_id, gender, hand_preference))
-                        export_to_csv("./output_data/output_subInfo.db", "data", "./output_data/output_subInfo.csv")
+                        export_to_txt("./output_data/output_subInfo.db", "data", "./output_data/output_subInfo.txt")
                         conn_output.commit()
                         conn.close()
                         cursor_output.close()
                         conn_output.close()
                         QMessageBox.information(None, "提示", "登录成功", QMessageBox.Ok)
                         win.close()
-                        game = main.Game()
-                        game.run()
+                        to_interfaceWindow(win)
                         win.close()
             else:
                 QMessageBox.warning(None, "警告", "您的登录账号错误或者性别或惯用手不匹配！", QMessageBox.Ok)

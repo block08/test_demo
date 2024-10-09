@@ -466,7 +466,6 @@ class Game:
                                 timestamp3, timestamp4, timestamp5, timestamp6, timestamp7, timestamp8))
 
             if paused:
-                print(paused)
                 paint_button3.text = "继续"
                 step_button3.text = "已暂停"
                 gf.update_screen(user_button3)
