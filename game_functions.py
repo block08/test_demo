@@ -52,342 +52,132 @@ def check_events(self, stats, button1, button2, button4, numbers, paused, t1, t2
             button2_clicked = button2.rect.collidepoint(mouse_x, mouse_y)
             button4_clicked = button4.rect.collidepoint(mouse_x, mouse_y)
             if button1_clicked:
-                serial_marker()
+                serial_marker(bytes([0b11111111]))
                 click_sound.play()
                 paused = not paused
             if button2_clicked:
                 click_sound.play()
                 stats.game_active = True
-                serial_marker()
+                serial_marker(bytes([0b00000001]))
                 if stats.game_score == 0:
+                    serial_marker(bytes([0b00000001]))
                     t1, timestamp1 = random_painting(numbers[stats.game_score], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 1:
+                    serial_marker(bytes([0b00000010]))
                     t2, timestamp2 = random_painting(numbers[stats.game_score], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 2:
+                    serial_marker(bytes([0b00000011]))
                     t3, timestamp3 = random_painting(numbers[stats.game_score], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 3:
+                    serial_marker(bytes([0b00000100]))
                     t4, timestamp4 = random_painting(numbers[stats.game_score], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 4:
+                    serial_marker(bytes([0b00000101]))
                     t5, timestamp5 = random_painting(numbers[stats.game_score], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 5:
+                    serial_marker(bytes([0b00000110]))
                     t6, timestamp6 = random_painting(numbers[stats.game_score], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 6:
+                    serial_marker(bytes([0b00000111]))
                     t7, timestamp7 = random_painting(numbers[stats.game_score], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 7:
+                    serial_marker(bytes([0b00001000]))
                     t8, timestamp8 = random_painting(numbers[stats.game_score], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 8:
-                    serial_marker()
+
                     t9 = globalClock.getTime()
                     pygame.image.save(self.screen, "./output_image/post_screenshot7.png")
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 10:
+                    serial_marker(bytes([0b00001010]))
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 11:
+                    serial_marker(bytes([0b00001011]))
                     t1, timestamp1 = random_painting2(numbers[stats.game_score - 11], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 12:
+                    serial_marker(bytes([0b00001100]))
                     t2, timestamp2 = random_painting2(numbers[stats.game_score - 11], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 13:
+                    serial_marker(bytes([0b00001101]))
                     t3, timestamp3 = random_painting2(numbers[stats.game_score - 11], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 14:
+                    serial_marker(bytes([0b00001110]))
                     t4, timestamp4 = random_painting2(numbers[stats.game_score - 11], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 15:
+                    serial_marker(bytes([0b00001111]))
                     t5, timestamp5 = random_painting2(numbers[stats.game_score - 11], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 16:
+                    serial_marker(bytes([0b00010000]))
                     t6, timestamp6 = random_painting2(numbers[stats.game_score - 11], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 17:
+                    serial_marker(bytes([0b00010001]))
                     t7, timestamp7 = random_painting2(numbers[stats.game_score - 11], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 18:
+                    serial_marker(bytes([0b00010010]))
                     t8, timestamp8 = random_painting2(numbers[stats.game_score - 11], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 19:
-                    serial_marker()
+                    serial_marker(bytes([0b00010011]))
                     t9 = globalClock.getTime()
                     pygame.image.save(self.screen, "./output2_image/post_screenshot7.png")
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 21:
+                    serial_marker(bytes([0b00010100]))
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 22:
+                    serial_marker(bytes([0b00010101]))
                     t1, timestamp1 = random_painting3(numbers[stats.game_score - 22], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 23:
+                    serial_marker(bytes([0b00010110]))
                     t2, timestamp2 = random_painting3(numbers[stats.game_score - 22], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 24:
+                    serial_marker(bytes([0b00010111]))
                     t3, timestamp3 = random_painting3(numbers[stats.game_score - 22], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 25:
+                    serial_marker(bytes([0b00011000]))
                     t4, timestamp4 = random_painting3(numbers[stats.game_score - 22], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 26:
+                    serial_marker(bytes([0b00011001]))
                     t5, timestamp5 = random_painting3(numbers[stats.game_score - 22], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 27:
+                    serial_marker(bytes([0b00011010]))
                     t6, timestamp6 = random_painting3(numbers[stats.game_score - 22], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 28:
+                    serial_marker(bytes([0b00011011]))
                     t7, timestamp7 = random_painting3(numbers[stats.game_score - 22], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 29:
+                    serial_marker(bytes([0b00011100]))
                     t8, timestamp8 = random_painting3(numbers[stats.game_score - 22], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 30:
-                    serial_marker()
+                    serial_marker(bytes([0b00011101]))
                     t9 = globalClock.getTime()
                     pygame.image.save(self.screen, "./output3_image/post_screenshot7.png")
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 32:
                     stats.game_score = stats.game_score + 1
-                # elif stats.game_score == 10:
-                #     serial_marker()
-                #     timestamp2 = time.strftime('%Y-%m-%d %H:%M:%S')
-                #     t2 = globalClock.getTime()
-                #     pygame.image.save(self.screen, "./output2_image/post_screenshot1.png")
-                #     self.screen.fill((255, 255, 255))
-                #     this_level.drawrect(self.screen)
-                #     pygame.image.save(self.screen, "./output2_image/pre_screenshot2.png")
-                #     self.level.setup1(560, 340)
-                #     stats.game_score = stats.game_score + 1
-                # elif stats.game_score == 11:
-                #     serial_marker()
-                #     timestamp3 = time.strftime('%Y-%m-%d %H:%M:%S')
-                #     t3 = globalClock.getTime()
-                #     pygame.image.save(self.screen, "./output2_image/post_screenshot2.png")
-                #     self.screen.fill((255, 255, 255))
-                #     this_level.drawcircle(self.screen)
-                #     pygame.image.save(self.screen, "./output2_image/pre_screenshot3.png")
-                #     self.level.setup2(560, 540)
-                #     stats.game_score = stats.game_score + 1
-                # elif stats.game_score == 12:
-                #     serial_marker()
-                #     timestamp4 = time.strftime('%Y-%m-%d %H:%M:%S')
-                #     t4 = globalClock.getTime()
-                #     pygame.image.save(self.screen, "./output2_image/post_screenshot3.png")
-                #     self.screen.fill((255, 255, 255))
-                #     this_level.drawpolygon(self.screen)
-                #     pygame.image.save(self.screen, "./output2_image/pre_screenshot4.png")
-                #     self.level.setup3(150, 50)
-                #     stats.game_score = stats.game_score + 1
-                # elif stats.game_score == 13:
-                #     serial_marker()
-                #     timestamp5 = time.strftime('%Y-%m-%d %H:%M:%S')
-                #     t5 = globalClock.getTime()
-                #     pygame.image.save(self.screen, "./output2_image/post_screenshot4.png")
-                #     self.screen.fill((255, 255, 255))
-                #     this_level.drawpolygon_1(self.screen)
-                #     pygame.image.save(self.screen, "./output2_image/pre_screenshot5.png")
-                #     self.level.setup4(100, 100)
-                #     stats.game_score = stats.game_score + 1
-                # elif stats.game_score == 14:
-                #     serial_marker()
-                #     timestamp6 = time.strftime('%Y-%m-%d %H:%M:%S')
-                #     t6 = globalClock.getTime()
-                #     pygame.image.save(self.screen, "./output2_image/post_screenshot5.png")
-                #     self.screen.fill((255, 255, 255))
-                #     this_level.drawline_1(self.screen)
-                #     pygame.image.save(self.screen, "./output2_image/pre_screenshot6.png")
-                #     self.level.setup5(960, 100)
-                #     stats.game_score = stats.game_score + 1
-                # elif stats.game_score == 15:
-                #     serial_marker()
-                #     timestamp7 = time.strftime('%Y-%m-%d %H:%M:%S')
-                #     t7 = globalClock.getTime()
-                #     pygame.image.save(self.screen, "./output2_image/post_screenshot6.png")
-                #     self.screen.fill((255, 255, 255))
-                #     this_level.drawellipse(self.screen)
-                #     pygame.image.save(self.screen, "./output2_image/pre_screenshot7.png")
-                #     self.level.setup6(160, 560)
-                #     stats.game_score = stats.game_score + 1
-                # elif stats.game_score == 16:
-                #     serial_marker()
-                #     timestamp8 = time.strftime('%Y-%m-%d %H:%M:%S')
-                #     t8 = globalClock.getTime()
-                #     pygame.image.save(self.screen, "./output2_image/post_screenshot7.png")
-                #     self.screen.fill((255, 255, 255))
-                #     this_level.drawarc(self.screen)
-                #     pygame.image.save(self.screen, "./output2_image/pre_screenshot8.png")
-                #     self.level.setup7(160, 560)
-                #     stats.game_score = stats.game_score + 1
-                # elif stats.game_score == 17:
-                #     serial_marker()
-                #     t9 = globalClock.getTime()
-                #     pygame.image.save(self.screen, "./output2_image/post_screenshot8.png")
-                #     self.screen.fill((255, 255, 255))
-                #     image = cv2.imread('./output_image/screen.png')
-                #     image1 = cv2.imread('./output_image/pre_screenshot1.png')
-                #     image1_1 = cv2.imread('./output_image/post_screenshot1.png')
-                #     image2 = cv2.imread('./output_image/pre_screenshot2.png')
-                #     image2_1 = cv2.imread('./output_image/post_screenshot2.png')
-                #     image3 = cv2.imread('./output_image/pre_screenshot3.png')
-                #     image3_1 = cv2.imread('./output_image/post_screenshot3.png')
-                #     image4 = cv2.imread('./output_image/pre_screenshot4.png')
-                #     image4_1 = cv2.imread('./output_image/post_screenshot4.png')
-                #     image5 = cv2.imread('./output_image/pre_screenshot5.png')
-                #     image5_1 = cv2.imread('./output_image/post_screenshot5.png')
-                #     image6 = cv2.imread('./output_image/pre_screenshot6.png')
-                #     image6_1 = cv2.imread('./output_image/post_screenshot6.png')
-                #     image7 = cv2.imread('./output_image/pre_screenshot7.png')
-                #     image7_1 = cv2.imread('./output_image/post_screenshot7.png')
-                #     image8 = cv2.imread('./output_image/pre_screenshot8.png')
-                #     image8_1 = cv2.imread('./output_image/post_screenshot8.png')
-                #     origin_image1 = abs(image1 - image)
-                #     calculate_pixel_difference(origin_image1, image1, image1_1, t1, t2, timestamp1)
-                #     calculate_pixel_difference(image, image2, image2_1, t2, t3, timestamp2)
-                #     calculate_pixel_difference(image, image3, image3_1, t3, t4, timestamp3)
-                #     calculate_pixel_difference(image, image4, image4_1, t4, t5, timestamp4)
-                #     calculate_pixel_difference(image, image5, image5_1, t5, t6, timestamp5)
-                #     calculate_pixel_difference(image, image6, image6_1, t6, t7, timestamp6)
-                #     calculate_pixel_difference(image, image7, image7_1, t7, t8, timestamp7)
-                #     calculate_pixel_difference(image, image8, image8_1, t8, t9, timestamp8)
-                #     pygameimage1 = pygame.image.load('./output2_image/post_screenshot1.png')
-                #     pygameimage2 = pygame.image.load('./output2_image/post_screenshot2.png')
-                #     pygameimage3 = pygame.image.load('./output2_image/post_screenshot3.png')
-                #     pygameimage4 = pygame.image.load('./output2_image/post_screenshot4.png')
-                #     pygameimage5 = pygame.image.load('./output2_image/post_screenshot5.png')
-                #     pygameimage6 = pygame.image.load('./output2_image/post_screenshot6.png')
-                #     pygameimage7 = pygame.image.load('./output2_image/post_screenshot7.png')
-                #     pygameimage8 = pygame.image.load('./output2_image/post_screenshot8.png')
-                #     deviation_area(pygameimage1)
-                #     deviation_area(pygameimage2)
-                #     deviation_area(pygameimage3)
-                #     deviation_area(pygameimage4)
-                #     deviation_area(pygameimage5)
-                #     deviation_area(pygameimage6)
-                #     deviation_area(pygameimage7)
-                #     deviation_area(pygameimage8)
-                #     stats.game_score = stats.game_score + 1
-                # elif stats.game_score == 19:
-                #     serial_marker()
-                #     timestamp2 = time.strftime('%Y-%m-%d %H:%M:%S')
-                #     t2 = globalClock.getTime()
-                #     pygame.image.save(self.screen, "./output3_image/post_screenshot1.png")
-                #     self.screen.fill((255, 255, 255))
-                #     this_level.drawrect(self.screen)
-                #     pygame.image.save(self.screen, "./output3_image/pre_screenshot2.png")
-                #     self.level.setup1(560, 340)
-                #     stats.game_score = stats.game_score + 1
-                # elif stats.game_score == 20:
-                #     serial_marker()
-                #     timestamp3 = time.strftime('%Y-%m-%d %H:%M:%S')
-                #     t3 = globalClock.getTime()
-                #     pygame.image.save(self.screen, "./output3_image/post_screenshot2.png")
-                #     self.screen.fill((255, 255, 255))
-                #     this_level.drawcircle(self.screen)
-                #     pygame.image.save(self.screen, "./output3_image/pre_screenshot3.png")
-                #     self.level.setup2(560, 540)
-                #     stats.game_score = stats.game_score + 1
-                # elif stats.game_score == 21:
-                #     serial_marker()
-                #     timestamp4 = time.strftime('%Y-%m-%d %H:%M:%S')
-                #     t4 = globalClock.getTime()
-                #     pygame.image.save(self.screen, "./output3_image/post_screenshot3.png")
-                #     self.screen.fill((255, 255, 255))
-                #     this_level.drawpolygon(self.screen)
-                #     pygame.image.save(self.screen, "./output3_image/pre_screenshot4.png")
-                #     self.level.setup3(150, 50)
-                #     stats.game_score = stats.game_score + 1
-                # elif stats.game_score == 22:
-                #     serial_marker()
-                #     timestamp5 = time.strftime('%Y-%m-%d %H:%M:%S')
-                #     t5 = globalClock.getTime()
-                #     pygame.image.save(self.screen, "./output3_image/post_screenshot4.png")
-                #     self.screen.fill((255, 255, 255))
-                #     this_level.drawpolygon_1(self.screen)
-                #     pygame.image.save(self.screen, "./output3_image/pre_screenshot5.png")
-                #     self.level.setup4(100, 100)
-                #     stats.game_score = stats.game_score + 1
-                # elif stats.game_score == 23:
-                #     serial_marker()
-                #     timestamp6 = time.strftime('%Y-%m-%d %H:%M:%S')
-                #     t6 = globalClock.getTime()
-                #     pygame.image.save(self.screen, "./output3_image/post_screenshot5.png")
-                #     self.screen.fill((255, 255, 255))
-                #     this_level.drawline_1(self.screen)
-                #     pygame.image.save(self.screen, "./output3_image/pre_screenshot6.png")
-                #     self.level.setup5(960, 100)
-                #     stats.game_score = stats.game_score + 1
-                # elif stats.game_score == 24:
-                #     serial_marker()
-                #     timestamp7 = time.strftime('%Y-%m-%d %H:%M:%S')
-                #     t7 = globalClock.getTime()
-                #     pygame.image.save(self.screen, "./output3_image/post_screenshot6.png")
-                #     self.screen.fill((255, 255, 255))
-                #     this_level.drawellipse(self.screen)
-                #     pygame.image.save(self.screen, "./output3_image/pre_screenshot7.png")
-                #     self.level.setup6(160, 560)
-                #     stats.game_score = stats.game_score + 1
-                # elif stats.game_score == 25:
-                #     serial_marker()
-                #     timestamp8 = time.strftime('%Y-%m-%d %H:%M:%S')
-                #     t8 = globalClock.getTime()
-                #     pygame.image.save(self.screen, "./output3_image/post_screenshot7.png")
-                #     self.screen.fill((255, 255, 255))
-                #     this_level.drawarc(self.screen)
-                #     pygame.image.save(self.screen, "./output3_image/pre_screenshot8.png")
-                #     self.level.setup7(160, 560)
-                #     stats.game_score = stats.game_score + 1
-                # elif stats.game_score == 26:
-                #     serial_marker()
-                #     t9 = globalClock.getTime()
-                #     pygame.image.save(self.screen, "./output3_image/post_screenshot8.png")
-                #     self.screen.fill((255, 255, 255))
-                #     image = cv2.imread('./output3_image/screen.png')
-                #     image1 = cv2.imread('./output3_image/pre_screenshot1.png')
-                #     image1_1 = cv2.imread('./output3_image/post_screenshot1.png')
-                #     image2 = cv2.imread('./output3_image/pre_screenshot2.png')
-                #     image2_1 = cv2.imread('./output3_image/post_screenshot2.png')
-                #     image3 = cv2.imread('./output3_image/pre_screenshot3.png')
-                #     image3_1 = cv2.imread('./output3_image/post_screenshot3.png')
-                #     image4 = cv2.imread('./output3_image/pre_screenshot4.png')
-                #     image4_1 = cv2.imread('./output3_image/post_screenshot4.png')
-                #     image5 = cv2.imread('./output3_image/pre_screenshot5.png')
-                #     image5_1 = cv2.imread('./output3_image/post_screenshot5.png')
-                #     image6 = cv2.imread('./output3_image/pre_screenshot6.png')
-                #     image6_1 = cv2.imread('./output3_image/post_screenshot6.png')
-                #     image7 = cv2.imread('./output3_image/pre_screenshot7.png')
-                #     image7_1 = cv2.imread('./output3_image/post_screenshot7.png')
-                #     image8 = cv2.imread('./output3_image/pre_screenshot8.png')
-                #     image8_1 = cv2.imread('./output3_image/post_screenshot8.png')
-                #     origin_image1 = abs(image1 - image)
-                #     calculate_pixel_difference(origin_image1, image1, image1_1, t1, t2, timestamp1)
-                #     calculate_pixel_difference(image, image2, image2_1, t2, t3, timestamp2)
-                #     calculate_pixel_difference(image, image3, image3_1, t3, t4, timestamp3)
-                #     calculate_pixel_difference(image, image4, image4_1, t4, t5, timestamp4)
-                #     calculate_pixel_difference(image, image5, image5_1, t5, t6, timestamp5)
-                #     calculate_pixel_difference(image, image6, image6_1, t6, t7, timestamp6)
-                #     calculate_pixel_difference(image, image7, image7_1, t7, t8, timestamp7)
-                #     calculate_pixel_difference(image, image8, image8_1, t8, t9, timestamp8)
-                #     pygameimage1 = pygame.image.load('./output3_image/post_screenshot1.png')
-                #     pygameimage2 = pygame.image.load('./output3_image/post_screenshot2.png')
-                #     pygameimage3 = pygame.image.load('./output3_image/post_screenshot3.png')
-                #     pygameimage4 = pygame.image.load('./output3_image/post_screenshot4.png')
-                #     pygameimage5 = pygame.image.load('./output3_image/post_screenshot5.png')
-                #     pygameimage6 = pygame.image.load('./output3_image/post_screenshot6.png')
-                #     pygameimage7 = pygame.image.load('./output3_image/post_screenshot7.png')
-                #     pygameimage8 = pygame.image.load('./output3_image/post_screenshot8.png')
-                #     deviation_area(pygameimage1)
-                #     deviation_area(pygameimage2)
-                #     deviation_area(pygameimage3)
-                #     deviation_area(pygameimage4)
-                #     deviation_area(pygameimage5)
-                #     deviation_area(pygameimage6)
-                #     deviation_area(pygameimage7)
-                #     deviation_area(pygameimage8)
-                #     stats.game_score = stats.game_score + 1
 
             if button4_clicked:
                 click_sound.play()

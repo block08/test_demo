@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1675</width>
-    <height>985</height>
+    <width>1816</width>
+    <height>1290</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>40</y>
+      <x>300</x>
+      <y>240</y>
       <width>1481</width>
       <height>831</height>
      </rect>
@@ -381,7 +381,7 @@ QPushButton:pressed{
            <item>
             <widget class="QStackedWidget" name="stackedWidget">
              <property name="currentIndex">
-              <number>2</number>
+              <number>0</number>
              </property>
              <widget class="QWidget" name="page_home">
               <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -401,13 +401,13 @@ border-radius:5px</string>
               </layout>
              </widget>
              <widget class="QWidget" name="page_exercise">
-              <widget class="QPushButton" name="pushButton_4">
+              <widget class="QPushButton" name="run_exercise">
                <property name="geometry">
                 <rect>
-                 <x>460</x>
-                 <y>290</y>
-                 <width>211</width>
-                 <height>231</height>
+                 <x>520</x>
+                 <y>350</y>
+                 <width>101</width>
+                 <height>101</height>
                 </rect>
                </property>
                <property name="styleSheet">
@@ -434,15 +434,31 @@ QPushButton:hover{
                 </size>
                </property>
               </widget>
-             </widget>
-             <widget class="QWidget" name="page_main">
-              <widget class="QPushButton" name="pushButton_5">
+              <widget class="QLabel" name="label_2">
                <property name="geometry">
                 <rect>
-                 <x>460</x>
-                 <y>290</y>
-                 <width>211</width>
-                 <height>231</height>
+                 <x>300</x>
+                 <y>220</y>
+                 <width>511</width>
+                 <height>71</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font-size: 50px</string>
+               </property>
+               <property name="text">
+                <string>点击按钮进行练习实验</string>
+               </property>
+              </widget>
+             </widget>
+             <widget class="QWidget" name="page_main">
+              <widget class="QPushButton" name="run_main_test">
+               <property name="geometry">
+                <rect>
+                 <x>520</x>
+                 <y>350</y>
+                 <width>101</width>
+                 <height>101</height>
                 </rect>
                </property>
                <property name="styleSheet">
@@ -467,6 +483,90 @@ QPushButton:hover{
                  <width>160</width>
                  <height>160</height>
                 </size>
+               </property>
+              </widget>
+              <widget class="QLabel" name="label_3">
+               <property name="geometry">
+                <rect>
+                 <x>270</x>
+                 <y>250</y>
+                 <width>591</width>
+                 <height>101</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font-size: 50px</string>
+               </property>
+               <property name="text">
+                <string>2、点击按钮进行正式实验</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="label_4">
+               <property name="geometry">
+                <rect>
+                 <x>270</x>
+                 <y>150</y>
+                 <width>511</width>
+                 <height>101</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font-size: 50px</string>
+               </property>
+               <property name="text">
+                <string>1、选择每人绘图数量：</string>
+               </property>
+              </widget>
+              <widget class="QComboBox" name="comboBox">
+               <property name="geometry">
+                <rect>
+                 <x>830</x>
+                 <y>175</y>
+                 <width>101</width>
+                 <height>51</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>40</pointsize>
+                </font>
+               </property>
+               <property name="editable">
+                <bool>false</bool>
+               </property>
+               <property name="frame">
+                <bool>true</bool>
+               </property>
+               <item>
+                <property name="text">
+                 <string>10</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>20</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>30</string>
+                </property>
+               </item>
+              </widget>
+              <widget class="QLabel" name="label_5">
+               <property name="geometry">
+                <rect>
+                 <x>940</x>
+                 <y>150</y>
+                 <width>61</width>
+                 <height>101</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font-size: 50px</string>
+               </property>
+               <property name="text">
+                <string>张</string>
                </property>
               </widget>
              </widget>
@@ -494,8 +594,8 @@ QPushButton:hover{
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1527</x>
-     <y>79</y>
+     <x>1770</x>
+     <y>270</y>
     </hint>
     <hint type="destinationlabel">
      <x>1601</x>
@@ -510,8 +610,8 @@ QPushButton:hover{
    <slot>showMinimized()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1505</x>
-     <y>73</y>
+     <x>1744</x>
+     <y>270</y>
     </hint>
     <hint type="destinationlabel">
      <x>1626</x>

@@ -12,12 +12,52 @@ import sqlite3
 
 import main
 import main_simulation
+from check_serial_connection import check_serial_connection
+
 
 class Interfacewindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.ui = InterfaceUI.Ui_MainWindow()
         self.ui.setupUi(self)
+        self.ui.run_exercise.clicked.connect(self.go_main_exercise)
+        self.ui.run_main_test.clicked.connect(self.go_main)
+        self.ui.pushButton_exercise.clicked.connect(self.go_exercise)
+        self.ui.pushButton_main.clicked.connect(self.go_main_test)
+        self.ui.pushButton_highestscore.clicked.connect(self.go_highestscore)
+    def go_main_exercise(self):
+        serial_name = 'COM3'
+        if check_serial_connection(serial_name):
+            ser_flag = 0
+        else:
+            ser_flag = 1
+        if ser_flag == 0:
+            game = main.Game()
+            game.run()
+        elif ser_flag == 1:
+            game = main_simulation.Game()
+            game.run()
+
+    def go_main(self):
+        serial_name = 'COM3'
+        if check_serial_connection(serial_name):
+            ser_flag = 0
+        else:
+            ser_flag = 1
+        if ser_flag == 0:
+            game = main.Game()
+            game.run()
+        elif ser_flag == 1:
+            game = main_simulation.Game()
+            game.run()
+    def go_exercise(self):
+        self.ui.stackedWidget.setCurrentIndex(1)
+
+    def go_main_test(self):
+        self.ui.stackedWidget.setCurrentIndex(2)
+
+    def go_highestscore(self):
+        self.ui.stackedWidget.setCurrentIndex(3)
 
     def mousePressEvent(self, event):
         if event.button() == QtCore.Qt.LeftButton and self.isMaximized() == False:
@@ -47,6 +87,11 @@ class Interfacewindow(QMainWindow):
         def btn3_clicked():
             InterfaceUi.stackedWidget.setCurrentIndex(3)
 
+        serial_name = 'COM3'
+        if check_serial_connection(serial_name):
+            ser_flag = 0
+        else:
+            ser_flag = 1
         app = QApplication(sys.argv)
         win = Interfacewindow()
         InterfaceUi = InterfaceUI.Ui_MainWindow()
@@ -56,7 +101,6 @@ class Interfacewindow(QMainWindow):
         InterfaceUi.pushButton_exercise.clicked.connect(btn1_clicked)
         InterfaceUi.pushButton_main.clicked.connect(btn2_clicked)
         InterfaceUi.pushButton_highestscore.clicked.connect(btn3_clicked)
-
-
         win.show()
+
 
