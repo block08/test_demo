@@ -2,15 +2,9 @@
 # -*- coding: utf-8 -*-
 import sys
 from PyQt5 import QtCore, QtGui
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QStandardItemModel, QStandardItem
-from PyQt5.QtWidgets import QMessageBox, QApplication, QMainWindow, QTableView, QPushButton, QVBoxLayout, QWidget
-
+from PyQt5.QtWidgets import QApplication, QMainWindow
+from pygame import time
 import InterfaceUI
-import sqlite3
-
-
-import main
 import main_simulation
 from check_serial_connection import check_serial_connection
 
@@ -25,6 +19,8 @@ class Interfacewindow(QMainWindow):
         self.ui.pushButton_exercise.clicked.connect(self.go_exercise)
         self.ui.pushButton_main.clicked.connect(self.go_main_test)
         self.ui.pushButton_highestscore.clicked.connect(self.go_highestscore)
+
+
     def go_main_exercise(self):
         serial_name = 'COM3'
         if check_serial_connection(serial_name):
@@ -39,17 +35,33 @@ class Interfacewindow(QMainWindow):
             game.run()
 
     def go_main(self):
+        painting_number = self.ui.comboBox.currentText()
         serial_name = 'COM3'
         if check_serial_connection(serial_name):
             ser_flag = 0
         else:
             ser_flag = 1
+        with open(f"./setting_parameter/painting_number.txt", "w", encoding='utf-8') as file:
+            file.write(painting_number)
+        time.delay(500)
+        with open(f"./setting_parameter/painting_number.txt", "r", encoding='utf-8') as file:
+            number = int(file.read())
         if ser_flag == 0:
-            game = main.Game()
-            game.run()
+            if number == 10:
+                print(number)
+            elif number == 20:
+                print(number)
+            else:
+                game = main_30.Game()
+                game.run()
         elif ser_flag == 1:
-            game = main_simulation.Game()
-            game.run()
+            if number == 10:
+                print(number)
+            elif number == 20:
+                print(number)
+            else:
+                game = main_simulation.Game()
+                game.run()
     def go_exercise(self):
         self.ui.stackedWidget.setCurrentIndex(1)
 
@@ -104,3 +116,7 @@ class Interfacewindow(QMainWindow):
         win.show()
 
 
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    Interfacewindow().run()
+    sys.exit(app.exec_())
