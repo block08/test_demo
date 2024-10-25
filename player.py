@@ -47,15 +47,15 @@ class Player(pygame.sprite.Sprite):
             pygame.K_UP: 0,
             pygame.K_DOWN: 0
         }
+
+        self.status = 0
+
+    def input(self):
         with open('scroll_value.txt', 'r') as f:
             speed = str(f.read().splitlines())
         speed = speed.replace("[", "").replace("]", "").replace("'", "")
         self.speed = int(speed)
-        self.status = 0
-
-    def input(self):
-
-
+        print(self.speed)
         keys = pygame.key.get_pressed()
 
         if keys[pygame.K_UP]:
@@ -77,6 +77,10 @@ class Player(pygame.sprite.Sprite):
         self.display_surface = pygame.display.get_surface()
 
     def input1(self):
+        with open('scroll_value.txt', 'r') as f:
+            speed = str(f.read().splitlines())
+        speed = speed.replace("[", "").replace("]", "").replace("'", "")
+        self.speed = int(speed)
         keys = pygame.key.get_pressed()
 
         if keys[pygame.K_w]:
@@ -100,6 +104,10 @@ class Player(pygame.sprite.Sprite):
         self.display_surface = pygame.display.get_surface()
 
     def input2(self):
+        with open('scroll_value.txt', 'r') as f:
+            speed = str(f.read().splitlines())
+        speed = speed.replace("[", "").replace("]", "").replace("'", "")
+        self.speed = int(speed)
         keys = pygame.key.get_pressed()
 
         if keys[pygame.K_w]:

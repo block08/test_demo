@@ -3,8 +3,6 @@
 import sys
 import pygame
 import tkinter as tk
-from psychopy import core
-
 from paint import random_painting, random_painting2, random_painting3
 from serial_marker import serial_marker
 
@@ -29,7 +27,6 @@ def check_keydown_events(event):
         sys.exit()
 
 
-globalClock = (core.Clock())
 pygame.mixer.init()
 click_sound = pygame.mixer.Sound("./sound/click.wav")
 
@@ -58,7 +55,7 @@ def check_events(self, stats, button1, button2, button4, numbers, paused, t1, t2
             if button2_clicked:
                 click_sound.play()
                 stats.game_active = True
-                serial_marker(bytes([0b00000001]))
+
                 if stats.game_score == 0:
                     serial_marker(bytes([0b00000001]))
                     t1, timestamp1 = random_painting(numbers[stats.game_score], self, stats.game_score)
@@ -92,8 +89,8 @@ def check_events(self, stats, button1, button2, button4, numbers, paused, t1, t2
                     t8, timestamp8 = random_painting(numbers[stats.game_score], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 8:
-
-                    t9 = globalClock.getTime()
+                    serial_marker(bytes([0b00001001]))
+                    t9 = pygame.time.get_ticks() / 1000
                     pygame.image.save(self.screen, "./output_image/post_screenshot7.png")
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 10:
@@ -133,7 +130,7 @@ def check_events(self, stats, button1, button2, button4, numbers, paused, t1, t2
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 19:
                     serial_marker(bytes([0b00010011]))
-                    t9 = globalClock.getTime()
+                    t9 = pygame.time.get_ticks() / 1000
                     pygame.image.save(self.screen, "./output2_image/post_screenshot7.png")
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 21:
@@ -173,14 +170,16 @@ def check_events(self, stats, button1, button2, button4, numbers, paused, t1, t2
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 30:
                     serial_marker(bytes([0b00011101]))
-                    t9 = globalClock.getTime()
+                    t9 = pygame.time.get_ticks() / 1000
                     pygame.image.save(self.screen, "./output3_image/post_screenshot7.png")
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 32:
                     stats.game_score = stats.game_score + 1
 
             if button4_clicked:
+
                 click_sound.play()
+
 
                 def update_label(value):
                     """更新标签显示的数值，并记录当前数值"""
@@ -199,6 +198,7 @@ def check_events(self, stats, button1, button2, button4, numbers, paused, t1, t2
                 root.title("画笔速度")
                 root.geometry("300x200+1110+610")
 
+                root.attributes('-topmost', True)
                 # 创建一个标签，用于显示当前数值
                 label = tk.Label(root, text=f"当前数值: {current_value}", font=("Arial", 14))
                 label.pack(pady=20)
@@ -213,6 +213,7 @@ def check_events(self, stats, button1, button2, button4, numbers, paused, t1, t2
 
                 # 运行 Tkinter 主循环
                 root.mainloop()
+
     return paused, t1, t2, t3, t4, t5, t6, t7, t8, t9, timestamp1, timestamp2, timestamp3, timestamp4, timestamp5, timestamp6, timestamp7, timestamp8
 
 

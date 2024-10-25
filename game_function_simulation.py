@@ -3,7 +3,7 @@
 import sys
 import pygame
 import tkinter as tk
-from psychopy import core
+
 
 from paint import random_painting, random_painting2, random_painting3
 
@@ -28,7 +28,6 @@ def check_keydown_events(event):
         sys.exit()
 
 
-globalClock = (core.Clock())
 pygame.mixer.init()
 click_sound = pygame.mixer.Sound("./sound/click.wav")
 
@@ -81,7 +80,7 @@ def check_events(self, stats, button1, button2, button4, numbers, paused, t1, t2
                     t8, timestamp8 = random_painting(numbers[stats.game_score], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 8:
-                    t9 = globalClock.getTime()
+                    t9 = pygame.time.get_ticks()
                     pygame.image.save(self.screen, "./output_image/post_screenshot7.png")
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 10:
@@ -111,7 +110,7 @@ def check_events(self, stats, button1, button2, button4, numbers, paused, t1, t2
                     t8, timestamp8 = random_painting2(numbers[stats.game_score - 11], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 19:
-                    t9 = globalClock.getTime()
+                    t9 = pygame.time.get_ticks()
                     pygame.image.save(self.screen, "./output2_image/post_screenshot7.png")
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 21:
@@ -141,7 +140,7 @@ def check_events(self, stats, button1, button2, button4, numbers, paused, t1, t2
                     t8, timestamp8 = random_painting3(numbers[stats.game_score - 22], self, stats.game_score)
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 30:
-                    t9 = globalClock.getTime()
+                    t9 = pygame.time.get_ticks()
                     pygame.image.save(self.screen, "./output3_image/post_screenshot7.png")
                     stats.game_score = stats.game_score + 1
                 elif stats.game_score == 32:
@@ -166,6 +165,7 @@ def check_events(self, stats, button1, button2, button4, numbers, paused, t1, t2
                 root.title("画笔速度")
                 root.geometry("300x200+1110+610")
 
+                root.attributes('-topmost', True)
                 # 创建一个标签，用于显示当前数值
                 label = tk.Label(root, text=f"当前数值: {current_value}", font=("Arial", 14))
                 label.pack(pady=20)

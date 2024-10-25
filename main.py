@@ -37,7 +37,7 @@ class Game:
         self.screen = pygame.display.set_mode((settings.screen_width, settings.screen_height))
 
         # 设置字体&字号
-        self.font = pygame.font.Font('./font/STXINGKA.TTF', 40)
+        self.font = pygame.font.Font('font/STXINGKA.TTF', 40)
 
         # 设置标题
 
@@ -67,8 +67,7 @@ class Game:
 
         # 呈现指导语
         instruction = pygame.image.load('pic/1.jpg')
-        instruction_size = instruction.get_rect()
-        self.screen.blit(instruction, (instruction_size[2] / 2, instruction_size[3] / 2))
+        self.screen.blit(instruction, (0, 0))
         pygame.display.update()
 
         wait = True
@@ -117,6 +116,27 @@ class Game:
             if remaining_time == 0:
                 running = False
                 self.screen.fill('white')
+
+        instruction = pygame.image.load('pic/paint.jpg')
+        self.screen.blit(instruction, (0, 0))
+        pygame.display.update()
+
+        wait = True
+        while wait:  # 等待按键
+            for event in pygame.event.get():
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE:
+                        pygame.quit()
+                        # 退出python程序，不捕获异常,不加上这一句也能退出，但是会在中断报错
+                        sys.exit()
+                    elif event.key == pygame.K_SPACE:
+                        wait = False
+                        self.screen.fill('white')
+                elif event.type == pygame.QUIT:
+                    pygame.quit()
+                    # 退出python程序，不捕获异常,不加上这一句也能退出，但是会在中断报错
+                    sys.exit()
+        pygame.display.update()
         running1 = True
         while running1:
             # 按键检测
@@ -187,7 +207,7 @@ class Game:
 
                 pygame.display.update()
                 if stats.game_score == 9:
-                    font = pygame.font.Font('./font/STXINGKA.TTF', 100)  # 设置字体大小为100
+                    font = pygame.font.Font('font/STXINGKA.TTF', 100)  # 设置字体大小为100
 
                     # 渲染“计算中”文本
                     text_surface = font.render("计算中...", True, black)
@@ -203,7 +223,7 @@ class Game:
 
                     dataloading(t1, t2, t3, t4, t5, t6, t7, t8, t9, timestamp1, timestamp2, timestamp3, timestamp4,
                                 timestamp5, timestamp6, timestamp7, timestamp8)
-                    with open(f"./Behavioral_data/name.txt", "r") as file:
+                    with open(f"Behavioral_data/name.txt", "r") as file:
                         time = file.read()
                     with open(f"./Behavioral_data/subA/Behavioral_data{time}.txt", "r", encoding="utf-8") as f:
                         lines = f.readlines()
@@ -217,7 +237,7 @@ class Game:
                             f"图像 7  {lines[6].strip()} {lines[14].strip()}",
                             f"图像 8  {lines[7].strip()} {lines[15].strip()}"
                         ]
-                    with open(f"./Behavioral_data/name.txt", "r") as file:
+                    with open(f"Behavioral_data/name.txt", "r") as file:
                         pass
                     self.screen.fill('white')
                     draw_data(self, self.screen, data)
@@ -339,7 +359,7 @@ class Game:
 
                 pygame.display.update()
                 if stats.game_score == 20:
-                    font = pygame.font.Font('./font/STXINGKA.TTF', 100)  # 设置字体大小为100
+                    font = pygame.font.Font('font/STXINGKA.TTF', 100)  # 设置字体大小为100
 
                     # 渲染“计算中”文本
                     text_surface = font.render("计算中...", True, black)
@@ -354,8 +374,8 @@ class Game:
                     pygame.display.update()
 
                     dataloading2(t1, t2, t3, t4, t5, t6, t7, t8, t9, timestamp1, timestamp2, timestamp3, timestamp4,
-                                timestamp5, timestamp6, timestamp7, timestamp8)
-                    with open(f"./Behavioral_data/name.txt", "r") as file:
+                                 timestamp5, timestamp6, timestamp7, timestamp8)
+                    with open(f"Behavioral_data/name.txt", "r") as file:
                         time = file.read()
                     with open(f"./Behavioral_data/subB/Behavioral_data{time}.txt", "r", encoding="utf-8") as f:
                         lines = f.readlines()
@@ -369,7 +389,7 @@ class Game:
                             f"图像 7  {lines[6].strip()} {lines[14].strip()}",
                             f"图像 8  {lines[7].strip()} {lines[15].strip()}"
                         ]
-                    with open(f"./Behavioral_data/name.txt", "r") as file:
+                    with open(f"Behavioral_data/name.txt", "r") as file:
                         pass
                     self.screen.fill('white')
                     draw_data(self, self.screen, data)
@@ -382,8 +402,6 @@ class Game:
                 if stats.game_score == 22:
                     self.screen.fill('white')
                     break
-
-
 
         numbers3 = random.sample(range(1, 9), 8)
 
@@ -493,7 +511,7 @@ class Game:
                 pygame.display.update()
 
                 if stats.game_score == 31:
-                    font = pygame.font.Font('./font/STXINGKA.TTF', 100)  # 设置字体大小为100
+                    font = pygame.font.Font('font/STXINGKA.TTF', 100)  # 设置字体大小为100
 
                     # 渲染“计算中”文本
                     text_surface = font.render("计算中...", True, black)
@@ -509,7 +527,7 @@ class Game:
 
                     dataloading3(t1, t2, t3, t4, t5, t6, t7, t8, t9, timestamp1, timestamp2, timestamp3, timestamp4,
                                  timestamp5, timestamp6, timestamp7, timestamp8)
-                    with open(f"./Behavioral_data/name.txt", "r") as file:
+                    with open(f"Behavioral_data/name.txt", "r") as file:
                         time = file.read()
                     with open(f"./Behavioral_data/subA+B/Behavioral_data{time}.txt", "r", encoding="utf-8") as f:
                         lines = f.readlines()
@@ -523,7 +541,7 @@ class Game:
                             f"图像 7  {lines[6].strip()} {lines[14].strip()}",
                             f"图像 8  {lines[7].strip()} {lines[15].strip()}"
                         ]
-                    with open(f"./Behavioral_data/name.txt", "r") as file:
+                    with open(f"Behavioral_data/name.txt", "r") as file:
                         pass
                     self.screen.fill('white')
                     draw_data(self, self.screen, data)
@@ -531,7 +549,6 @@ class Game:
                     stats.game_score += 1
                 if stats.game_score == 32:
                     next_button3.text = "结束"
-                    
 
                 gf.update_screen(next_button3)
                 if stats.game_score == 33:
@@ -557,6 +574,8 @@ class Game:
 
                     # 退出python程序，不捕获异常,不加上这一句也能退出，但是会在中断报错
                     sys.exit()
+
+
 def draw_data(self, screen, data):
     # 逐行绘制数据
     for i, text in enumerate(data):
@@ -567,13 +586,12 @@ def draw_data(self, screen, data):
         screen.blit(data_surface, (50, 50 + i * 100))
 
 
-
 def dataloading(t1, t2, t3, t4, t5, t6, t7, t8, t9, timestamp1, timestamp2, timestamp3, timestamp4, timestamp5,
                 timestamp6, timestamp7, timestamp8):
-    image = cv2.imread('./output_image/post_screenshot-1.png')
-    image1 = cv2.imread('./output_image/pre_screenshot0.png')
-    image1_1 = cv2.imread('./output_image/post_screenshot0.png')
-    image2 = cv2.imread('./output_image/pre_screenshot1.png')
+    image = cv2.imread('output_image/post_screenshot-1.png')
+    image1 = cv2.imread('output_image/pre_screenshot0.png')
+    image1_1 = cv2.imread('output_image/post_screenshot0.png')
+    image2 = cv2.imread('output_image/pre_screenshot1.png')
     image2_1 = cv2.imread('./output_image/post_screenshot1.png')
     image3 = cv2.imread('./output_image/pre_screenshot2.png')
     image3_1 = cv2.imread('./output_image/post_screenshot2.png')
@@ -595,7 +613,7 @@ def dataloading(t1, t2, t3, t4, t5, t6, t7, t8, t9, timestamp1, timestamp2, time
     calculate_pixel_difference(image, image6, image6_1, t6, t7, timestamp6)
     calculate_pixel_difference(image, image7, image7_1, t7, t8, timestamp7)
     calculate_pixel_difference(image, image8, image8_1, t8, t9, timestamp8)
-    pygameimage1 = cv2.imread('./output_image/post_screenshot0.png')
+    pygameimage1 = cv2.imread('output_image/post_screenshot0.png')
     pygameimage2 = cv2.imread('./output_image/post_screenshot1.png')
     pygameimage3 = cv2.imread('./output_image/post_screenshot2.png')
     pygameimage4 = cv2.imread('./output_image/post_screenshot3.png')
@@ -659,7 +677,7 @@ def dataloading2(t1, t2, t3, t4, t5, t6, t7, t8, t9, timestamp1, timestamp2, tim
 
 
 def dataloading3(t1, t2, t3, t4, t5, t6, t7, t8, t9, timestamp1, timestamp2, timestamp3, timestamp4, timestamp5,
-                timestamp6, timestamp7, timestamp8):
+                 timestamp6, timestamp7, timestamp8):
     image = cv2.imread('./output3_image/post_screenshot-1.png')
     image1 = cv2.imread('./output3_image/pre_screenshot0.png')
     image1_1 = cv2.imread('./output3_image/post_screenshot0.png')

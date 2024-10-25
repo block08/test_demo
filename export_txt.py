@@ -10,7 +10,6 @@ def export_to_txt(database_path, table_name, txt_file_path):
 
     # 查询所有数据
     cursor.execute(f"SELECT * FROM {table_name}")
-    print(cursor.fetchall())
     rows = cursor.fetchall()
 
     # 获取列名

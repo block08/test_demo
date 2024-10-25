@@ -5,11 +5,9 @@ import cv2
 import numpy as np
 
 
-
-
 def save_cropped_image(frame, x, y, width, height, filename):
     # 裁剪指定区域
-    roi = frame[y:y+height, x:x+width]
+    roi = frame[y:y + height, x:x + width]
     return roi
 
 
@@ -33,7 +31,10 @@ def calculate_pixel_difference(origin_image, image1, image2, t1, t2, timestamp):
         time = file.read()
     with open(f"./Behavioral_data/subA/Behavioral_data{time}.txt", "a", encoding="utf-8") as f:
         # 输出结果
-        f.write(f"有效像素: {binary_pixel}   总像素: {binary_total_image}   百分比：{diff_percentage:.2f}%   绘图时长：{t} \n")
+        f.write(
+            f"有效像素: {binary_pixel}   总像素: {binary_total_image}   百分比：{diff_percentage:.2f}%   绘图时长：{t} \n")
+
+
 def calculate_pixel_difference2(origin_image, image1, image2, t1, t2, timestamp):
     x, y, width, height = 0, 50, 1920, 920
     origin_image = save_cropped_image(origin_image, x, y, width, height, timestamp)
@@ -54,7 +55,10 @@ def calculate_pixel_difference2(origin_image, image1, image2, t1, t2, timestamp)
         time = file.read()
     with open(f"./Behavioral_data/subB/Behavioral_data{time}.txt", "a", encoding="utf-8") as f:
         # 输出结果
-        f.write(f"有效像素: {binary_pixel}   总像素: {binary_total_image}   百分比：{diff_percentage:.2f}%   绘图时长：{t} \n")
+        f.write(
+            f"有效像素: {binary_pixel}   总像素: {binary_total_image}   百分比：{diff_percentage:.2f}%   绘图时长：{t} \n")
+
+
 def calculate_pixel_difference3(origin_image, image1, image2, t1, t2, timestamp):
     x, y, width, height = 0, 50, 1920, 920
     origin_image = save_cropped_image(origin_image, x, y, width, height, timestamp)
@@ -75,4 +79,5 @@ def calculate_pixel_difference3(origin_image, image1, image2, t1, t2, timestamp)
         time = file.read()
     with open(f"./Behavioral_data/subA+B/Behavioral_data{time}.txt", "a", encoding="utf-8") as f:
         # 输出结果
-        f.write(f"有效像素: {binary_pixel}   总像素: {binary_total_image}   百分比：{diff_percentage:.2f}%   绘图时长：{t} \n")
+        f.write(
+            f"有效像素: {binary_pixel}   总像素: {binary_total_image}   百分比：{diff_percentage:.2f}%   绘图时长：{t} \n")

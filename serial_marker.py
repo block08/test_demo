@@ -1,9 +1,9 @@
+import pygame
 import serial
-from psychopy import core
 
 port_name = 'COM3'
-globalClock = (core.Clock())
 
+pygame.init()
 
 def serial_marker(data_to_send):
     ser = serial.Serial(
@@ -16,9 +16,9 @@ def serial_marker(data_to_send):
     )
     clear_zero = bytes([0b00000000])
     ser.write(data_to_send)
-    stimulus_pulse_start_time = globalClock.getTime()
+    stimulus_pulse_start_time = pygame.time.get_ticks()
     running = True
     while running:
-        if globalClock.getTime() - stimulus_pulse_start_time >= 0.05:
+        if pygame.time.get_ticks() - stimulus_pulse_start_time >= 0.05:
             ser.write(clear_zero)
             running = False
