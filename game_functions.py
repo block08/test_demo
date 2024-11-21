@@ -4,7 +4,6 @@ import sys
 import pygame
 import tkinter as tk
 from psychopy import core
-
 from paint import random_painting, random_painting2, random_painting3
 from serial_marker import serial_marker
 

@@ -71,8 +71,6 @@ def deviation_area1(image):
 
 
 def deviation_area2(image):
-    # 读取图像
-    image = cv2.imread('./output_image/post_screenshot0.png')
     x, y, width, height = 0, 50, 1920, 920
     # 裁剪图像
     image = image[y:y + height, x:x + width]
@@ -84,13 +82,18 @@ def deviation_area2(image):
     hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
     lower_green = np.array([35, 100, 100])
     upper_green = np.array([85, 255, 255])
-    green_mask = cv2.inRange(hsv_image, lower_green, upper_green)
 
+    green_mask = cv2.inRange(hsv_image, lower_green, upper_green)
+    # 定义红色的HSV范围（注意红色在HSV中有两个范围）
+    lower_red = np.array([0, 100, 100])
+    upper_red = np.array([10, 255, 255])
+    red_mask = cv2.inRange(hsv_image, lower_red, upper_red)
     # 检测黑色线条
     _, black_mask = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY_INV)
 
     # 合并绿色和黑色的掩码
-    combined_mask = cv2.bitwise_or(green_mask, black_mask)
+    combined_mask = cv2.bitwise_or(green_mask, red_mask)
+    combined_mask = cv2.bitwise_or(combined_mask, black_mask)
 
     # 查找轮廓
     contours, _ = cv2.findContours(combined_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
@@ -132,10 +135,8 @@ def deviation_area2(image):
         # 输出结果
         f.write(f"偏差像素个数 : {white_pixel_count}\n")
 
-
 def deviation_area3(image):
     # 读取图像
-    image = cv2.imread('./output_image/post_screenshot0.png')
     x, y, width, height = 0, 50, 1920, 920
     # 裁剪图像
     image = image[y:y + height, x:x + width]
@@ -147,27 +148,23 @@ def deviation_area3(image):
     hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
     lower_green = np.array([35, 100, 100])
     upper_green = np.array([85, 255, 255])
+
     green_mask = cv2.inRange(hsv_image, lower_green, upper_green)
-
     # 定义红色的HSV范围（注意红色在HSV中有两个范围）
-    lower_red1 = np.array([0, 100, 100])
-    upper_red1 = np.array([10, 255, 255])
-    lower_red2 = np.array([160, 100, 100])
-    upper_red2 = np.array([180, 255, 255])
-
-    # 创建掩码，提取红色区域
-    red_mask1 = cv2.inRange(hsv_image, lower_red1, upper_red1)
-    red_mask2 = cv2.inRange(hsv_image, lower_red2, upper_red2)
-    red_mask = cv2.bitwise_or(red_mask1, red_mask2)
-
+    lower_red = np.array([0, 100, 100])
+    upper_red = np.array([10, 255, 255])
+    red_mask = cv2.inRange(hsv_image, lower_red, upper_red)
     # 检测黑色线条
     _, black_mask = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY_INV)
 
     # 合并绿色和黑色的掩码
-    combined_mask = cv2.bitwise_or(green_mask, red_mask, black_mask)
+    combined_mask = cv2.bitwise_or(green_mask, red_mask)
+    combined_mask = cv2.bitwise_or(combined_mask, black_mask)
+
 
     # 查找轮廓
     contours, _ = cv2.findContours(combined_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
 
     # 遍历所有轮廓
     for i, contour in enumerate(contours):

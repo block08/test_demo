@@ -534,6 +534,9 @@ QPushButton:hover{
                <property name="editable">
                 <bool>false</bool>
                </property>
+               <property name="maxCount">
+                <number>60</number>
+               </property>
                <property name="frame">
                 <bool>true</bool>
                </property>
